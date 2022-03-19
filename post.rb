@@ -23,9 +23,7 @@ class Post
   def save
     file = File.new(file_path, "w:UTF-8")
 
-    for item in to_strings
-      file.puts(item)
-    end
+    to_strings.each { |string| file.puts(string) }
 
     file.close
   end

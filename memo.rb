@@ -4,7 +4,7 @@ class Memo < Post
     @text = []
     line = nil
 
-    while line != "end"
+    until line == "end"
       line = STDIN.gets.chomp
       @text << line
     end
@@ -13,7 +13,7 @@ class Memo < Post
   end
 
   def to_strings
-    time_string = "Создано: #{@created_at.strftime("%Y.%m.%d, %H:%M:%S")} \n \n"
+    time_string = "Создано: #{@created_at.strftime("%Y.%m.%d, %H:%M:%S")} \n"
     @text.unshift(time_string)
   end
 end
